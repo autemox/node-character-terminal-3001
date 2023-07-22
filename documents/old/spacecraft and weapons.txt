@@ -1,0 +1,35 @@
+Weapons
+Common ship weapons include Dual Rail Guns, Energy Cannons, Heavy Bombs, Homing Missiles, and Multi Pulse Cannons.
+
+Dual Rail Gun: High speed rapid fire from two barrels.  A typical weapon of smaller agile ships.
+
+Energy Cannon: Powerful forward blasts sure to take down enemy defenses.
+
+Heavy Bomb: Slow speed bombs pack a powerful punch.  Commonly found on larger ships and frigates.
+
+Homing Missile: Missiles designed to lock on and turn toward their target.
+
+Multi Pulse Cannon: Rapid fire energy cannons with a multi-bullet spread.
+
+Ships
+Common ships include the Avenger, Beetle, Marauder, Raider, Stalker, Striker, and Vanguard.  There are also the larger ships: Dreadnought, Freighter, Hauler.  Pilots know the most about ships, so they are the best to ask questions to.
+
+Avenger: The Agile Avenger is the brainchild of the Wind Dancers, a clan of humans who settled on gas giants and adapted to their turbulent atmospheres. This ship is designed to mimic the swift and unpredictable movements of the gas giant storms. It's highly maneuverable, able to dodge enemy fire with ease, but its hull and shields are not as strong.  Equipped with Dual Rail Guns.
+
+Beetle: The balanced beetle is the pride of the United Colonies, a federation of human settlements scattered across the galaxy. This ship represents the Colonies' belief in balance and versatility. It's a jack-of-all-trades, capable of handling a variety of missions. However, it doesn't excel in any particular area.  Equipped with Homing Missiles.
+
+Dreadnought: The Defensive Dreadnought is a symbol of the Iron Wall, a militaristic faction that believes in the power of defense. This ship is built like a fortress, with a strong hull and powerful shields. It's not the fastest or most maneuverable ship, but it can withstand a barrage of enemy fire.  Equipped with Heavy Bombs.
+
+Freighter: The Fortified Freighter is a product of the Stellar Cartel, a powerful trading consortium. This ship is designed to protect valuable cargo, with a strong hull and powerful shields. It's not very fast or maneuverable, but it can withstand pirate attacks and reach its destination safely.  Equipped with Heavy Bombs.
+
+Hauler: The Heavy Hauler is a product of the industrious Forge Guild, a group of humans who survived the Earth's destruction by retreating to the asteroid belts. This ship is built to withstand the harsh conditions of asteroid mining, with a large cargo hold for hauling precious metals. It's slow and cumbersome, but its hull is as tough as the asteroids it's designed to mine.  Equipped with Dual Rail Guns.
+
+Marauder: The Mighty Marauder is a symbol of the Warborn Clan, a group of humans who believein the power of strength and courage. This ship is built for battle, with a strong hull and a powerful weapon. However, it sacrifices shield strength and cargo capacity for its combat capabilities. It's a favorite among the clan's warriors, who value honor and strength above all else.  Equipped with Multi Pulse Cannon.
+
+Raider: The Rapid Raider is a favorite among the Star Reavers, a notorious band of space pirates. This ship is built for quick raids on unsuspecting targets, with a large cargo hold for stolen goods. It's fast, but its hull and shields are not built to withstand prolonged combat.  Equipped with Homing Missile.
+
+Stalker: The Stealth Stalker is a creation of the Shadow Syndicate, a secretive organization that thrives in the underbelly of human society. This ship is designed for covert operations, with a focus on speed and maneuverability. It's a favorite among spies and assassins, who value the ability to escape as much as the ability to attack.  Equipped with Dual Rail Gun.
+
+Striker: The Swift Striker was designed by the agile engineers of the Zephyr Clan, known for their love of speed and precision. This ship is a testament to their philosophy of striking quickly and retreating before the enemy can react. It's the preferred choice of the clan's elite scouts, who value speed over everything else. However, the ship's hull strength and cargo capacity had to be sacrificed to achieve such high speeds.  Equipped with Energy Cannon.
+
+Vanguard: The Versatile Vanguard is the flagship model of the Evon Corporation, the largest ship manufacturer in the galaxy. This ship is designed to be a reliable and versatile choice for any mission. It's a well-rounded ship, with balanced ratings in all areas.  Equipped with Energy Cannon.

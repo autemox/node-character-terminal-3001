@@ -1,8 +1,10 @@
 const { DirectoryLoader } = require("langchain/document_loaders/fs/directory");
 const { TextLoader } = require("langchain/document_loaders/fs/text");
 const dotenv = require("dotenv");
+const utils = require("./openaiUtils");
 const axios = require('axios');
 const db = require('./db');
+const { UsAppToPersonListInstance } = require("twilio/lib/rest/messaging/v1/service/usAppToPerson");
 dotenv.config();
 
 async function reloadAll(label) {
@@ -38,7 +40,7 @@ async function reloadCharacter(characterName) {
         // Erase the character's memories from Qdrant using the 'scroll' method for filtering
         const memoryPoints = await client.scroll(collectionName, query);
         if (memoryPoints && memoryPoints.points.length > 0) {
-            console.log(`Deleting ${memoryPoints.points.length} memories found on ${characterName}`);
+            console.log(`Deleting ${memoryPoints.points.length} ${characterName} Qdrant entries`);
             points=memoryPoints.points.map(point => point.id);
             await client.delete(collectionName, { points: points });
         }
@@ -47,9 +49,9 @@ async function reloadCharacter(characterName) {
         if (!character) return;  // Character not found
         await saveCharacterMemories(client, character, characterName);
 
-        const memoryPoints2 = await client.scroll(collectionName, query);
-        console.log(`Loaded new memories in.  There are now ${memoryPoints2.points.length} memories found on ${characterName}`);
-
+        const memoryPoints2 = await client.scroll(collectionName, query); //?? this double check is not needed its for console log only
+        console.log(`Loaded ${characterName} memories into Qdrant. There are now ${memoryPoints2.points.length} Qdrant entries with the title: ${characterName}`);
+        await utils.sleep(250);
 
     } catch (error) { console.error(`Failed in reloadCharacter(): ${error.message}`, error); }
 }
@@ -59,10 +61,11 @@ async function saveCharacterMemories(client, character, label) {
         const qdrant = require('./qdrant');
         
         let memories = character._doc.memories.map(memory => ({
-            label: label,
+            label: "memories",
             title: character._doc.name,
             content: memory.name
         }));
+        console.log(`Character ${character.name} (title ${character.title}) has ${memories.length} to save to Qdrant`, memories);
         if(memories.length>0) await qdrant.saveBatchToQdrant(client, memories);
     } 
     catch (error) { console.error(`Failed in saveCharacterMemories(): ${error.message}`, error); }

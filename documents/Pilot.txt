@@ -1,20 +1,3 @@
-Weapons
-Common ship weapons include Dual Rail Guns, Energy Cannons, Heavy Bombs, Homing Missiles, and Multi Pulse Cannons.
-
-Dual Rail Gun: High speed rapid fire from two barrels.  A typical weapon of smaller agile ships.
-
-Energy Cannon: Powerful forward blasts sure to take down enemy defenses.
-
-Heavy Bomb: Slow speed bombs pack a powerful punch.  Commonly found on larger ships and frigates.
-
-Homing Missile: Missiles designed to lock on and turn toward their target.
-
-Multi Pulse Cannon: Rapid fire energy cannons with a multi-bullet spread.
-
-
-Ships
-Common ships include the Avenger, Beetle, Dreadnought, Freighter, Hauler, Marauder, Raider, Stalker, Striker, and Vanguard.
-
 Avenger: The Agile Avenger is the brainchild of the Wind Dancers, a clan of humans who settled on gas giants and adapted to their turbulent atmospheres. This ship is designed to mimic the swift and unpredictable movements of the gas giant storms. It's highly maneuverable, able to dodge enemy fire with ease, but its hull and shields are not as strong.  Equipped with Dual Rail Guns.
 
 Beetle: The balanced beetle is the pride of the United Colonies, a federation of human settlements scattered across the galaxy. This ship represents the Colonies' belief in balance and versatility. It's a jack-of-all-trades, capable of handling a variety of missions. However, it doesn't excel in any particular area.  Equipped with Homing Missiles.

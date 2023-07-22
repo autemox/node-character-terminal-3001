@@ -23,7 +23,7 @@ async function reload(label)
                 batch.push({ label: label, title: doc.metadata.source.split('\\').pop().split('.').shift(), content: chunks[i].pageContent });
             }
         }
-        console.log(`Created batch of ${batch.length} label/title/content objects`, batch);
+        console.log(`Created batch of ${batch.length} of ${label} label/title/content objects`, batch);
         
         const qdrant = require('./qdrant');
         if(batch.length > 0) qdrant.saveBatchToQdrant(qdrant.client, batch);

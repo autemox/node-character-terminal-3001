@@ -7,6 +7,7 @@ dotenv.config();
 const chat = require("./chat");
 const middlewares = require('./middlewares');
 const routes = require('./routes');
+const { MidjourneyManipulator } = require('./midjourney');
 const socket = require('./socket');
 
 const app = express();
@@ -18,6 +19,7 @@ state = {
   TRIGGER_RELOAD_QDRANT_DB: "reload-qdrant",
   TRIGGER_DISPLAY_DIRECTIVE: "display-directive",
   TRIGGER_LOAD_GITHUB_TO_MEMORIES: "load-github",
+  ALLOWED_EXTENSIONS: ['cs', 'js', 'html', 'css', 'ejs', 'ts'],
   EXPLORATION_CHARACTERS_USE_GPT3: true,
   CHARACTERS_USE_GPT3: false,
   ASSISTANTS_USE_GPT3: false,
@@ -78,8 +80,13 @@ app.start = function() {
   initializeSockets(server);
 
   server.listen(state.PORT, () => console.log(`Server started on port ${state.PORT}`));
+
 };
 module.exports = app;
+
+
+const manipulator = new MidjourneyManipulator();
+manipulator.begin([]);
 
 let debugCount = 0;
 setInterval(() => {

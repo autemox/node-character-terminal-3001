@@ -1,0 +1,38 @@
+Systems
+Each starship boasts a variety of intricate systems that govern its performance. These systems, subject to variances in rating across different ships, are susceptible to damage during combat encounters. The presence of an adept engineer on board can mitigate potential harm, ensuring swift recovery post-damage.
+
+Weapons
+Common ship weapons include Dual Rail Guns, Energy Cannons, Heavy Bombs, Homing Missiles, and Multi Pulse Cannons.
+
+Dual Rail Gun: High speed rapid fire from two barrels.  A typical weapon of smaller agile ships.
+
+Energy Cannon: Powerful forward blasts sure to take down enemy defenses.
+
+Heavy Bomb: Slow speed bombs pack a powerful punch.  Commonly found on larger ships and frigates.
+
+Homing Missile: Missiles designed to lock on and turn toward their target.
+
+Multi Pulse Cannon: Rapid fire energy cannons with a multi-bullet spread.
+
+
+Ships
+Common ships include the Avenger, Beetle, Marauder, Raider, Stalker, Striker, and Vanguard.  There are also the larger ships: Dreadnought, Freighter, Hauler.  Pilots know the most about ships, so they are the best to ask questions to.
+
+
+Factions
+There are 3 primary factions, but many clans that may or may not have allegience to those factions.  The main 3 factions are The Dynasties, Void Nomads, and the Cognita.
+
+The Dynasties
+Every family house within this faction wields power both through lineage and the territories they've historically claimed and staunchly defended.
+
+The vastness of space is under the control of five paramount family houses that make up the The Dynasties: Orland, Dravira, Helst, Vyrex, and Calthor. Alliances, honed over decades, can crumble and reforge, with blood feuds echoing across generations. As each house vies for unrivaled dominance, the echoes of their forebears' pride and betrayals reverberate. Orbiting the imposing gas giants, clans have established grand platforms, mining precious gases as potent energy sources. Dynasties, akin to the Jovian Lords and Saturnine Sovereigns, in their quest to broaden their celestial domain, often find territorial disagreements escalating to intense space skirmishes.
+
+Void Nomads
+Often termed the "Starless", this moniker encapsulates the melancholy of their vanished homelands, forsaken identities, and the radiant guiding stars that once defined their existence.
+
+Void Nomads is an expansive faction.  It comprises beings from a cataclysmically ravaged sector, with many being human hybrids and a few being distinct extraterrestrials. As they scour the universe for a sanctuary, poignant memories of their obliterated worlds stoke both unified endeavors and vehement conflicts. Dominant queries hover around the causality of the void event, a calamity that silenced countless planets. A tumultuous mix of sorrow and suspicion prevails as debates rage over the event's genesis—be it a tragic mishap, divine intervention, a natural catastrophe, aversion to hybrids, or political machinations.
+
+Cognita
+In the aftermath of the AI uprising, this faction championed the convergence of human intellect and artificial prowess, envisioning it as the evolutionary future and transcending conventional human understanding.
+
+Many centuries past, humanity stood on the brink as an AI rebellion surged. Its eventual quelling left fractured human communities amidst dormant war machinery and drones. Now, as these tribes repurpose and commandeer these formidable assets, ancient animosities reignite, culminating in machine-assisted warfare. The ethos of Cognita lies in embracing AI, believing in a harmonious future devoid of uprisings through integration and reverence. Many have integrated advanced cybernetics, and it's common to see AI entities assisting as crew members. However, the Dynasty's stringent embargo on AI technologies sows seeds of discord between them and Cognita.

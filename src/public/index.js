@@ -21,7 +21,6 @@ function resizeMessageBox() {                                // DNYMAIC MESSAGE 
 
 const messagesContainer = document.getElementById("messages-container");
 async function displayTextSlowly(text) { 
-  //text=unescapeHtml(addImgTags(text));
   console.log("attempting to display: "+text);
   // The same logic from addTextOneWordAtATime function
   text = text.replaceAll("\n", "<br>");

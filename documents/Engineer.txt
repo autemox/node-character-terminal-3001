@@ -1,6 +1,3 @@
-Systems
-Each starship boasts a variety of intricate systems that govern its performance. These systems, subject to variances in rating across different ships, are susceptible to damage during combat encounters. The presence of an adept engineer on board can mitigate potential harm, ensuring swift recovery post-damage.
-
 Hull: System that represents the durability and size of the ship's exterior, determining its resistance to external threats.
 
 Shields: System that gauges the efficacy and recuperation pace of the protective layer safeguarding the ship against hull and systems damage.

@@ -25,7 +25,30 @@ async function processAndSaveMessages(state, id) // process messages from chatgp
     db.saveNewMemory(state, `At ${state.characterSheets[id]._doc.location}, ${memoryString}`, id);
 }
 
+async function summarizeAllMemories(state, id, summaryPrompt)
+{
+    // load character memories
+    let character = await db.getCharacter(state.characterNames[id]);
+    if (!character._doc.memories || character._doc.memories.length === 0) { console.log(`Character ${state.characterNames[id]} does not have any memories.`); return "No memories to summarize."; }
+
+    let fullMemories ="";
+    
+    // Iterates through each memory
+    for (const memory of character._doc.memories) {
+        fullMemories+=` \n\n ${memory.name}`;
+    }
+
+    // create memory string by summarizing conversation using chatgpt
+    let model = utils.estimateTokens(fullMemories) < 8000 ? "gpt-4-0613" : "gpt-3.5-turbo-16k"; // in future, break memory up if its long
+    if(state.MEMORIES_SUMMARIZER_USE_GPT3) model = "gpt-3.5-turbo-16k";
+    let query = summaryPrompt+" "+fullMemories;
+    let summary =  await utils.simpleQuery(query, model);
+
+    return summary;
+}
+
 module.exports = {
+    summarizeAllMemories,
     processAndSaveMessages,
 };
 

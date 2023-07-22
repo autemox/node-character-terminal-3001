@@ -21,6 +21,7 @@
     "express-rate-limit": "^6.7.1",
     "http": "^0.0.1-security",
     "langchain": "^0.0.73",
+    "midjourney": "^4.3.9",
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.2",
     "openai": "^3.3.0",

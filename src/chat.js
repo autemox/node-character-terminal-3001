@@ -17,6 +17,13 @@ var client = new twilio(process.env.TWILIO_ACCOUNT, process.env.TWILIO_AUTH);  /
 var twilioPhone = process.env.TWILIO_PHONE;
 var phoneAlertNumber= process.env.TWILIO_ALERT_PHONE;
 
+
+async function initializeCharacter(state, characterName, id)
+{
+  state.messagesByCharacter[characterName]=[]; 
+  await qdrantMemories.reloadCharacter(characterName);
+}
+
 function handleDisconnect(state, id)
 {
     if (state.userTimeouts[id]) {
@@ -54,12 +61,6 @@ function updateSystemDirective(state, messages, directiveMsg)
     state.systemDirective=directiveMsg;
   }
   return messages;
-}
-
-async function initializeCharacter(state, characterName, id)
-{
-  state.messagesByCharacter[characterName]=[]; 
-  await qdrantMemories.reloadCharacter(characterName);
 }
 
 async function receiveChatObject(state, obj, id, io)
@@ -170,6 +171,9 @@ async function receiveChatObject(state, obj, id, io)
         }
       }
 
+      // make code appear properly
+      modelResponse = sanitizeAndDivCodeSnipplets(modelResponse);
+
     // Send the model's response to all clients
     console.log(`[${obj.to}] to [User] ${modelResponse}`);
     io.emit(`chat message`, `${obj.to}<br> ${modelResponse}<br><br>`);
@@ -180,6 +184,28 @@ async function receiveChatObject(state, obj, id, io)
     console.error(`Error in receiveChatObject(): ${error.response}`, error);
     io.emit(`chat message`, `[ERROR: ${error.response != null ? error.response.statusText : error}]<br><br>`); // send html to clients with twilio or chatgpt error
   }
+} 
+
+function sanitizeHtml(input) {
+  return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function sanitizeAndDivCodeSnipplets(text)
+{
+  const codeBlockMarker = '```';
+  text = sanitizeHtml(text);
+  text=text.replace(codeBlockMarker+"javascript",codeBlockMarker);
+  text=text.replace(codeBlockMarker+"html",codeBlockMarker);
+  text=text.replace(codeBlockMarker+"css",codeBlockMarker);
+  text=text.replace(codeBlockMarker+"csharp",codeBlockMarker);
+  const block = text.split(codeBlockMarker);
+  let formattedResponse="";
+  for(let i=0;i<block.length;i++)
+  {
+      if(i%2==1) formattedResponse += "<div>"+block[i]+"</div>";   // odd numbers
+      else formattedResponse += block[i];
+  }
+  return formattedResponse;
 }
 
 async function checkMessageLength(state, io, characterName, maxTokens)
@@ -207,4 +233,5 @@ module.exports = {
     receiveChatObject,
     checkMessageLength,
     updateSystemDirective,
+    sanitizeHtml,
 };

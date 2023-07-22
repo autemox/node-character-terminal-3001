@@ -48,6 +48,16 @@ function characterToString(character) {
     return characterAttributes.join('. ');
 }
 
+async function saveDefaultPrompt(state, id, newPrompt)
+{
+        if (!state.characterSheets[id]) { console.error(`No character sheet found for id: ${id}`); return; } // error out
+        console.log(`Changing default_prompt of ${state.characterNames[id]}: `,{Prompt: newPrompt});
+        let character = await getCharacter(state.characterNames[id]); // update character from database in case its changed since it was saved to characterSheets[id]
+        character._doc.default_prompt = newPrompt;
+        character.markModified('default_prompt'); 
+        await character.save();
+}
+
 async function saveNewMemory(state, memoryString, id)
 {
         if (!state.characterSheets[id]) { console.error(`[saveNewMemory()] No character sheet found for id: ${id}`); return; } // error out
@@ -107,4 +117,5 @@ module.exports = {
     updateSystemDirectiveHeader,
     clearAllMemories,
     getAllCharacters,
+    saveDefaultPrompt,
 };

@@ -32,6 +32,7 @@ async function saveToQdrant(client, label, title, content)
     try {
     // get embedding data from chatgpt all at once
     let batch = [{ label: label, title: title, content: content }]; // batch of 1
+    console.log(`Saving single entry to quadrant: `, batch);
     await saveBatchToQdrant(client, batch);
     
     } catch (error) { console.error('Error in saveToQdrant(): ', error.message); }
@@ -40,6 +41,7 @@ async function saveToQdrant(client, label, title, content)
 async function saveBatchToQdrant(client, batch) {
     try {
         // send to openai to get vectors/embeddings
+        console.log(`Processing batch of size ${batch.length}, still need to get vectors and save to Qdrant`, batch);
         let vectors = await getVectorsFromOpenAi(batch);
         if(vectors.length == 0) return;
 
@@ -61,10 +63,12 @@ async function saveBatchToQdrant(client, batch) {
         }
 
         // save to qdrant
-        await client.upsert(process.env.QDRANT_COLLECTION_NAME, {
+        let result = await client.upsert(process.env.QDRANT_COLLECTION_NAME, {
             wait: true,
             points: points
         });
+        console.log('Upserted ${points.length} points (made of vectors: ${vectors.length}, metadata: ${batch.length}) into Qdrant: ', { points: points, vectors: vectors, metadata: batch, results: result});
+
     } catch (error) { console.error('Error in saveBatchToQdrant(): ', error); }
 }
 
@@ -76,9 +80,9 @@ async function getVectorsFromOpenAi(batch)
 {
     try {
         embeddings=limitArrChars(batch.map(item => item.content), 999999999);  // limit to characters being sent in to openai.  also cleans the arrays somehow but confused why it prevents an error
-        console.log("Emeddings created. ", {Embeddings: embeddings});
         if(!embeddings || !Array.isArray(embeddings)) return; // empty batch or batch with empty content
         const embeddingsArrays = await new OpenAIEmbeddings().embedDocuments(embeddings);
+        console.log("Emeddings/vectors created from contents of batch. ", {embeddingArrays: embeddingsArrays, Embeddings: embeddings});
         return embeddingsArrays;
     }catch (error) { console.error('Error in getVectorFromOpenAi(): ', error); }
 }
