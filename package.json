@@ -1,0 +1,32 @@
+{
+  "name": "12-character-terminal-3001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@qdrant/js-client-rest": "^1.3.0",
+    "@qdrant/qdrant-js": "^1.3.0",
+    "axios": "^1.4.0",
+    "completions": "^2.7.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-basic-auth": "^1.2.1",
+    "express-rate-limit": "^6.7.1",
+    "http": "^0.0.1-security",
+    "langchain": "^0.0.73",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.3.2",
+    "openai": "^3.3.0",
+    "path": "^0.12.7",
+    "socket.io": "^4.7.1",
+    "twilio": "^4.13.0",
+    "uuid": "^9.0.0"
+  }
+}

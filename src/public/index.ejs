@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= characterName %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-character-name="<%= characterName %>">
+    <div id="container">
+		<div id="container">
+		    <font size=-2 color=gray><%= characterName %>
+                <div id="nameAndTitle"></div><!-- //?? todo: load in name and title here instead of just name -->
+                <div id="chat-box">
+                    <div id="messages-container" contenteditable="true">
+                        <!-- Messages will be added here -->
+                    </div>
+                </div>
+				<div id="spinner" class="spinner hidden">
+				  <div class="bounce1"></div>
+				  <div class="bounce2"></div>
+				  <div class="bounce3"></div>
+				</div>
+			<!-- Rest of the HTML -->
+		</div>
+        <br>
+        <textarea id="message-box" rows="4" placeholder="Type your message here..."></textarea>
+        <br>
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index.js"></script>
+</body>
+</html>

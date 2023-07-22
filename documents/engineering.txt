@@ -1,0 +1,34 @@
+Systems
+Each starship boasts a variety of intricate systems that govern its performance. These systems, subject to variances in rating across different ships, are susceptible to damage during combat encounters. The presence of an adept engineer on board can mitigate potential harm, ensuring swift recovery post-damage.
+
+Hull: System that represents the durability and size of the ship's exterior, determining its resistance to external threats.
+
+Shields: System that gauges the efficacy and recuperation pace of the protective layer safeguarding the ship against hull and systems damage.
+
+Speed: System that indicates the vessel's peak velocity.
+
+Maneuverability: System that measures the ship's agility in executing turns and accelerating.
+
+Coolant: System that assesses the rate at which a ship can dissipate heat. Excessive weapon usage generates heat; a ship that overheats becomes incapacitated in terms of weapon use until adequately cooled. Ships with superior coolant ratings experience fewer overheating complications.
+
+Repair: System that reflects the general speed of system recuperation. Onboard crew members proficient in specific systems further enhance the repair pace for those particular systems.
+
+Upgrade Slots: Engineers possess the skill to enhance ships. Ship augmentation demands the appropriate hardware and necessary labor.
+
+Inventory Capacity: Defines the ship's ability to accommodate crew members. While crew recruitment offers a myriad of benefits, including diplomacy, many onboard crew members can bestow tactical advantages such as bolstered system ratings and hastened repair times.
+
+Star Drive: System that is standard equipment on all ships: the star drive facilitates rapid travel, albeit with a brief charging period. A high-quality star drive rating could be crucial for quick escapes, especially since these drives have reduced functionality during combat.
+
+
+Engineering Specializations
+Types of engineers include: Operator, Technician, Installer, Shipwright, Schematist
+
+Operator: Engineer who specializes in optimizing a ship's systems by directly operating them during flight.
+
+Technician: Engineer who focuses on providing expedited repairs to a ship's systems during combat situations.
+
+Installer: Engineer who primarily works on docked ships, expertly installing hardware and system upgrades.
+
+Shipwright: Engineer who is a master of constructing and vending ships.
+
+Schematist: Engineer who can design detailed schematics and produce specialized hardware for sale.

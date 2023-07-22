@@ -1,0 +1,2 @@
+// here is the midjourney prompt to generate a character image:
+// imagine wide angle. full body shot facing the camera:: [DESCRIPTOR] space pirate [MAN OR WOMAN] at bar::4 space station bar :: style of artist Craig Mullins ::5 --ar 16:9
