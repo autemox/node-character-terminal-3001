@@ -76,7 +76,7 @@ async function receiveChatObject(state, obj, id, io)
 
   // send message to all users and save to messages history
   console.log(`[${obj.from}] to [${obj.to}] ${obj.message}`);
-  io.emit(`chat message`, `${obj.from}<br> ${obj.message}<br><br>`);
+  io.emit(`chat message`, `${obj.from}<br>${obj.message}<br><br>`);
   
   // prepare system message using relavent character data from mongodb and qdrant
   state.characterSheets[id] = await db.getCharacter(obj.to);
@@ -176,7 +176,7 @@ async function receiveChatObject(state, obj, id, io)
 
     // Send the model's response to all clients
     console.log(`[${obj.to}] to [User] ${modelResponse}`);
-    io.emit(`chat message`, `${obj.to}<br> ${modelResponse}<br><br>`);
+    io.emit(`chat message`, `${obj.to}<br>${modelResponse}<br><br>`);
     state.messagesByCharacter[obj.to].push({ role: "system", content: modelResponse });  // add to messages history
     checkMessageLength(state, io, obj.to, state.MAX_TOKENS*0.8);
 

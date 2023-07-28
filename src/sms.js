@@ -10,7 +10,7 @@ function ReceiveSMS(state, req, res)
       
     let msgObj={to: state.SMS_CHARACTER, from: state.SMS_USER_NAME, message: req.body.Body};
     console.log(`[Sms] received message from twilio: to: ${msgObj.to} from: ${msgObj.from} message: ${msgObj.message} `);
-    ReceiveChatObject(state, msgObj, req.body.From); // process as a chat object
+    receiveChatObject(state, msgObj, req.body.From); // process as a chat object
   } else {
       res.status(403).send('Request not validated by Twilio');
       console.log(`[Sms] received message from twilio, failed validation`);

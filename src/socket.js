@@ -1,6 +1,6 @@
 const socketIO = require('socket.io');
 
-async function handleSockets (server, chat, state)
+function handleSockets (server, chat, state)
 {
   const io = socketIO(server);
 
@@ -18,12 +18,17 @@ async function handleSockets (server, chat, state)
     // SOCKET: ON RECEIVE MESSAGE FROM CLIENT/USER
     socket.on('chat object', async (obj) => {
 
-      chat.receiveChatObject(state, obj, socket.id, io);
-      
-    });
+      if(typeof obj === 'string') obj = {
+        to: "Zeph",
+        from: "User",
+        message: obj,
+      };
 
-    return io;
+      chat.receiveChatObject(state, obj, socket.id, io);
+    });
   });
+  
+  return io;
 }
 
 module.exports = {

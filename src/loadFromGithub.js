@@ -11,9 +11,9 @@ function getFileExtension(filename) {
     return filename.slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2);
 }
 
-async function begin(state, io, id, url) {
+async function handleLoadFromGithub(state, io, id, url) {
     try {
-        console.log(`Starting begin()`);
+        console.log(`Starting handleLoadFromGithub()`);
         let fileCount=0;
         
         // Extract owner, repo, and path from URL
@@ -40,7 +40,7 @@ async function begin(state, io, id, url) {
         io.emit(`chat message`, `[UPDATED DEFAULT_PROMPT WITH FULL PROJECT SUMMARY]<br><br>`);
 
     } catch (error) {
-        console.error(`Failed in begin(): ${error}`);
+        console.error(`Failed in handleLoadFromGithub(): ${error}`);
         io.emit(`chat message`, `[LOAD GITHUB TO MEMORIES FAILED: ${error}<br><br>`);
     }
 }
@@ -101,5 +101,5 @@ async function processGitHubFile(state, io, id, filename, content, fileCount)
 
 
 module.exports = {
-    begin,
+    handleLoadFromGithub,
 };
